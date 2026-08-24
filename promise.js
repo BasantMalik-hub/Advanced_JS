@@ -75,9 +75,12 @@ async function fetchData() {
 }
 
 async function getUser() {
-  const user = await fetchData();
-  console.log(user);
+    try {
+        const user = await fetchData()
+        console.log(user)
+    } catch (error) {
+        console.log(error.message)
+    }
 }
 
-getUser();
-
+getUser()
