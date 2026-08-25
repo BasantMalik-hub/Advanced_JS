@@ -1,17 +1,17 @@
-import fs from "fs";
+// import fs from "fs";
 
-setTimeout(() => {
-    console.log("setTimeout");
-}, 3000);
+// setTimeout(() => {
+//     console.log("setTimeout");
+// }, 3000);
 
-fs.readFile("intro.txt","utf8",(err,data)=>{
-    console.log("file read completed");
-})
+// fs.readFile("intro.txt","utf8",(err,data)=>{
+//     console.log("file read completed");
+// })
 
-setInterval(()=>{
-    console.log("set interval after 5ms");
-},500);
+// setInterval(()=>{
+//     console.log("set interval after 5ms");
+// },500);
 
-setImmediate(()=>{
-    console.log("set immediate");
-})
+// setImmediate(()=>{
+//     console.log("set immediate");
+// })
