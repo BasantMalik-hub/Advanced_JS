@@ -1,4 +1,4 @@
-// import fs from "fs";
+import fs from "fs";
 
 // setTimeout(() => {
 //     console.log("setTimeout");
@@ -15,3 +15,16 @@
 // setImmediate(()=>{
 //     console.log("set immediate");
 // })
+
+// const fs = require('fs');
+
+fs.readFile("intro.txt", "utf8", (err, data) => {
+  console.log("file read completed");
+  setTimeout(() => {
+    console.log("message");
+  }, 1000);
+
+  setImmediate(() => {
+    console.log("message");
+  });
+});
