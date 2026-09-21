@@ -1,8 +1,5 @@
 import http from 'http';
-const fs = require('fs')
-
-const htmlData = fs.readFileSync('./index.html','utf-8');
-
+import fs from 'fs';
 
 const server = http.createServer((req, res) => {
     console.log("hello");
@@ -12,17 +9,23 @@ const server = http.createServer((req, res) => {
         source:"Ghaziabad",
         username:"ABC"
     }
+    const data = fs.readFileSync('./index.html','utf-8');
+    console.log(`${data}`);
     res.writeHead(200,{
-        "content-type": "application/json",
+        // "content-type": "application/json",
+        "content-type": "text/html",
         "custom-header": "Hello ECE"
     })
-    res.end(JSON.stringify(order))
+    res.end(data);
+
+    // res.end(JSON.stringify(order))
     // res.statusCode = 200;
     // res.setHeader("content-type","application/json")
     // res.end("Hello Everyone");
+    
 });
 server.listen(3000,"127.0.0.1", () => {
-    console.log("server is running on http://127.0.0.1:3000/..");
+    console.log("server is running on http://127.0.0.1:3000/");
 });
 
 
